@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "k8clusterdtoes-030c"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "k8clusterdtoes-030c"
+  template:
+    metadata:
+      labels:
+        app: "k8clusterdtoes-030c"
+    spec:
+      containers:
+        - name: "k8clusterdtoes-030c"
+          image: "conregnamedaan.azurecr.io/k8clusterdtoes"
+          ports:
+          - containerPort: 8080
